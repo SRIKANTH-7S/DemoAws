@@ -207,3 +207,65 @@ http://localhost:8080
 Expected Output
 Your HTML page appears ✔
 📸 Screenshot this page
+
+
+
+---------------------------------------------------------------------------
+
+Nagios Monitioring
+
+Step 4: Start Minikube
+1.	Open a terminal (PowerShell or CMD). Do the following commands
+2.	Start Minikube with a specified driver (e.g., Hyper-V, Docker, or VirtualBox). For example:
+o	Hyper-V: 
+o	minikube start --driver=hyperv
+o	Docker: 
+o	minikube start --driver=docker
+3.	Verify Minikube is running:
+4.	minikube status
+________________________________________
+Step 5: Interact with Minikube
+
+
+
+Nagios Automation Steps
+Step 1: Pull the Nagios Docker Image
+•	Open a terminal and run:
+docker pull jasonrivers/nagios:latest
+Step 2: Run Nagios
+•	Command:
+docker run --name nagiosdemo -p 8888:80 jasonrivers/nagios:latest
+Step 3: Access Nagios Dashboard
+•	Open your browser and navigate to:
+http://localhost:8888
+o	Login Credentials:
+	Username: nagiosadmin
+	Password: nagios
+o	Once logged in, explore:
+	Hosts: View systems being monitored.
+	Services: Check tasks being monitored (e.g., CPU usage).
+	Alerts: Access recent notifications.
+Step 4: Monitoring Host Details
+1.	Navigate to the Host Information Page:
+o	Select a host from the Hosts menu.
+2.	Key Details:
+o	Host Status: Indicates if the system is UP or DOWN.
+o	Metrics: View CPU usage, memory status, and network activity.
+o	Actions: Reschedule checks, disable notifications, or schedule downtime.
+Step 5: Stop and Remove Nagios
+1.	Stop the Container:
+o	Command:
+docker stop nagiosdemo
+2.	Delete the Container:
+o	Command:
+docker rm nagiosdemo
+3.	Remove the Image (Optional):
+o	List images:
+docker images
+o	Delete the Nagios image:
+docker rmijasonrivers/nagios:latest
+
+4.	 Observe the docker containers in DockerHub, we can see the latest Nagios Installed running on port:8888
+
+
+
